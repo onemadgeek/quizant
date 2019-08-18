@@ -17,9 +17,10 @@ function resultMessage(quizResult, totalQuiz){
 }
 
 function Result(props) {
-	const {quizResult, totalQuiz, reset } = props;
+	const {quizResult, totalQuiz, reset, timeTaken } = props;
   return (
     <div className="container result">
+			<div id="time-taken">Time taken: {timeTaken}</div>
       <div>
 			<p id="quiz-results-message">{resultMessage(quizResult, totalQuiz)}</p>
 			<p id="quiz-results-score">You got <b>{quizResult}/{totalQuiz}</b> questions correct.</p>

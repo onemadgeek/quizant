@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-// import quizQuestions from './api/quizQuestions';
+import {secondsToHMS} from './utils';
 import Quiz from "./components/Quiz";
 import Result from "./components/Result";
 import logo from "./img/large_quizant.png";
@@ -13,8 +13,10 @@ class App extends Component {
       apiUrl: "//opentdb.com/api.php?amount=10",
       counter: 0,
       error: null,
-			isLoaded: false,
-			started: false,
+      isLoaded: false,
+      started: false,
+      quizStart: null,
+      timeTaken: null,
       quizQuestions: [],
       questionId: 1,
       totalQuiz: 0,
@@ -101,8 +103,9 @@ class App extends Component {
       answer: "",
       answersCount: {},
       result: "",
-			isLoaded: false,
-			started: false
+      isLoaded: false,
+      started: false,
+      quizStart: null
     });
     this.init(quizQuestions);
   }
@@ -144,11 +147,16 @@ class App extends Component {
     const answersCountValues = answersCountKeys.map(key => answersCount[key]);
     const maxAnswerCount = Math.max.apply(null, answersCountValues);
     return answersCountKeys.filter(key => answersCount[key] === maxAnswerCount);
-  }
+	}
+	
+	
+	
 
   setResults(result) {
     if (result.length) {
-      this.setState({ result: String(result.length) });
+			const { quizStart } = this.state;
+      let timeTaken = secondsToHMS((new Date() - quizStart) / 1000)
+      this.setState({ result: String(result.length), timeTaken });
     } else {
       this.setState({ result: "0" });
     }
@@ -169,12 +177,13 @@ class App extends Component {
   }
 
   renderResult() {
-    const { totalQuiz, result } = this.state;
+    const { totalQuiz, result, timeTaken } = this.state;
     return (
       <Result
         quizResult={result}
         totalQuiz={totalQuiz}
         reset={this.handleResetQuiz}
+        timeTaken={timeTaken}
       />
     );
   }
@@ -182,7 +191,12 @@ class App extends Component {
   renderStart() {
     return (
       <div className="container initial-screen">
-        <button id="button" onClick={() => this.setState({ started: true })}>
+        <button
+          id="button"
+          onClick={() =>
+            this.setState({ started: true, quizStart: new Date() })
+          }
+        >
           Start Quiz
         </button>
       </div>
