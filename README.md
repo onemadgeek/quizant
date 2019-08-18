@@ -51,21 +51,9 @@ Also, be sure to have `git` available in your PATH, `npm` might need it.
     $ cd quizant
     $ npm install
 
-### Configure app
-
-Copy `config.sample.json` to `config.json` then edit it with the url where you have setup:
-
-- backend api
-- oauth like endpoint for auth
-- development
-
 ## Start & watch
 
     $ npm start
-
-## Simple build for production
-
-    $ npm run build
 
 ## Update sources
 
@@ -80,34 +68,14 @@ To run those 3 commands you can just do
 
     $ npm run pull
 
-**Note:** Unix user can just link the `git-hooks/post-merge`:
-
-## Enable git hooks (unix only :/)
-
-    $ npm run create-hook-symlinks
-
-### `post-merge` (≃ `npm install`)
-
-This hook will `npm prune && npm install` each time you `git pull` something if the `package.json` has been modified.
-
-### `pre-commit` (≃ `npm test`)
-
-This hook will just ensure you will commit something not broken bye pruning npm packages not in the `package.json` & eventually reinstall missings/not correctly removed packages.
-Then it will try a production build.
 
 ---
 
 ## Languages & tools
 
-### HTML
-
-- [Jade](http://jade-lang.com/) for some templating.
-
 ### JavaScript
 
 - [JSHint](http://www.jshint.com/docs/) is used to prevent JavaScript error.
-- [JSCS](https://npmjs.org/package/jscs) is used to check coding conventions.
-- [Browserify](http://browserify.org/) to handle allow us to write our client-side scripts with [es6 syntax](http://es6.github.io/) thanks to [es6ify](https://github.com/thlorenz/es6ify).
 - [React](http://facebook.github.io/react) is used for UI.
 
 ### CSS
