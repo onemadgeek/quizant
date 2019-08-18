@@ -129,7 +129,7 @@ body {
   font-size: 16px;
 }
 
-#quiz-retry-button {
+#button {
   color: #282c34;
   cursor: pointer;
   outline: none;
@@ -138,6 +138,11 @@ body {
   font-size: 14px;
   font-weight: bold;
   padding: 7px;
+}
+
+.initial-screen {
+  text-align: center;
+  background-color: transparent;
 }
 
 .loader {

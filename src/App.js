@@ -13,7 +13,8 @@ class App extends Component {
       apiUrl: "//opentdb.com/api.php?amount=10",
       counter: 0,
       error: null,
-      isLoaded: false,
+			isLoaded: false,
+			started: false,
       quizQuestions: [],
       questionId: 1,
       totalQuiz: 0,
@@ -100,7 +101,8 @@ class App extends Component {
       answer: "",
       answersCount: {},
       result: "",
-      isLoaded: false
+			isLoaded: false,
+			started: false
     });
     this.init(quizQuestions);
   }
@@ -177,8 +179,18 @@ class App extends Component {
     );
   }
 
+  renderStart() {
+    return (
+      <div className="container initial-screen">
+        <button id="button" onClick={() => this.setState({ started: true })}>
+          Start Quiz
+        </button>
+      </div>
+    );
+  }
+
   render() {
-    const { error, isLoaded, result } = this.state;
+    const { error, isLoaded, result, started } = this.state;
     if (error) {
       return <div>Error: {error.message}</div>;
     } else if (!isLoaded) {
@@ -189,7 +201,11 @@ class App extends Component {
           <div className="App-header">
             <img src={logo} className="App-logo" alt="logo" />
           </div>
-          {result ? this.renderResult() : this.renderQuiz()}
+          {started
+            ? result
+              ? this.renderResult()
+              : this.renderQuiz()
+            : this.renderStart()}
         </div>
       );
     }

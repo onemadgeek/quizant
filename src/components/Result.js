@@ -23,7 +23,7 @@ function Result(props) {
       <div>
 			<p id="quiz-results-message">{resultMessage(quizResult, totalQuiz)}</p>
 			<p id="quiz-results-score">You got <b>{quizResult}/{totalQuiz}</b> questions correct.</p>
-			<button id="quiz-retry-button" onClick={reset}><span className="reloadSingle"></span>Play again</button>
+			<button id="button" onClick={reset}>Play again</button>
       </div>
     </div>
   );
