@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/quizant/static/css/main.35f7f619.chunk.css",
-    "main.js": "/quizant/static/js/main.6ce2699e.chunk.js",
-    "main.js.map": "/quizant/static/js/main.6ce2699e.chunk.js.map",
+    "main.css": "/quizant/static/css/main.d1787ea7.chunk.css",
+    "main.js": "/quizant/static/js/main.505a932d.chunk.js",
+    "main.js.map": "/quizant/static/js/main.505a932d.chunk.js.map",
     "runtime~main.js": "/quizant/static/js/runtime~main.0f361ec9.js",
     "runtime~main.js.map": "/quizant/static/js/runtime~main.0f361ec9.js.map",
     "static/js/2.107f0e0b.chunk.js": "/quizant/static/js/2.107f0e0b.chunk.js",
     "static/js/2.107f0e0b.chunk.js.map": "/quizant/static/js/2.107f0e0b.chunk.js.map",
     "index.html": "/quizant/index.html",
-    "precache-manifest.170d2dcbfeacbc2786d74e7d991fcd26.js": "/quizant/precache-manifest.170d2dcbfeacbc2786d74e7d991fcd26.js",
+    "precache-manifest.3f253349b1dea6714e90b0b073042b45.js": "/quizant/precache-manifest.3f253349b1dea6714e90b0b073042b45.js",
     "service-worker.js": "/quizant/service-worker.js",
-    "static/css/main.35f7f619.chunk.css.map": "/quizant/static/css/main.35f7f619.chunk.css.map",
+    "static/css/main.d1787ea7.chunk.css.map": "/quizant/static/css/main.d1787ea7.chunk.css.map",
     "static/media/index.css": "/quizant/static/media/icon-check.4cffa739.svg"
   }
 }
